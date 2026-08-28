@@ -67,7 +67,7 @@
 
       "pr.eyebrow": "Counsel across borders",
       "pr.h": "A practice built for complex, multi-jurisdictional matters",
-      "pr.lead": "Instructed where commercial stakes, regulatory exposure and several legal systems meet in a single matter.",
+      "pr.lead": "Matters often extend across several legal systems and several lines of operational management. We bring in proven, specialised professionals to reach the best result in the shortest time — wherever a case calls for a deep understanding of enforcement practice, particular fields of expertise and direct engagement with the state institutions of the jurisdictions involved.",
 
       "pr1.t": "International Arbitration & Disputes",
       "pr1.b": "Representation and advisory in institutional and cross-border arbitration, including ICC and LCIA frameworks, and the strategy that surrounds multi-forum disputes.",
@@ -201,7 +201,7 @@
 
       "pr.eyebrow": "Консультирование в трансграничных отношениях",
       "pr.h": "Практика, ориентированная на сложные дела, охватывающие несколько юрисдикций",
-      "pr.lead": "Мы привлекаем юристов для работы в случаях, когда коммерческие интересы, регуляторные риски и несколько правовых систем пересекаются в одном деле.",
+      "pr.lead": "Задачи часто распространяются на несколько правовых систем и векторов операционного управления. Мы привлекаем проверенных, профильных специалистов для получения лучшего результата в кратчайшие сроки — там, где необходимо глубокое понимание правоприменительной практики, особые области знания и прямое взаимодействие с институтами власти задействованных юрисдикций.",
 
       "pr1.t": "Международный арбитраж и разрешение споров",
       "pr1.b": "Представление интересов и консультации в институциональном и трансграничном арбитраже, включая рамки ICC и LCIA, а также разработка стратегии разрешения споров в нескольких юрисдикциях.",
