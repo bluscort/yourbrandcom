@@ -9,7 +9,7 @@
   var I18N = {
     en: {
       "doc.title": "Mark Romanov — International Lawyer, Jurisconsult & Arbitrator",
-      "doc.desc": "Strategic counsel in international arbitration, cross-border disputes, extradition defence, sanctions compliance and global asset protection.",
+      "doc.desc": "Strategic counsel in international arbitration, cross-border disputes, extradition defence, sanctions compliance, asset management and securitization.",
 
       "a11y.skip": "Skip to main content",
       "a11y.menu": "Open menu",
@@ -31,11 +31,22 @@
       "hero.eyebrow": "Private International Practice",
       "hero.name": "Mark Romanov",
       "hero.role": "International Lawyer, Jurisconsult & Arbitrator",
-      "hero.sub": "Strategic Counsel · Cross-Border Dispute Resolution · Global Asset Protection",
+      "hero.sub": "Strategic Counsel · Cross-Border Dispute Resolution · Asset Management & Securitization",
       "hero.bio": "With extensive experience in international law, global governance, analytics and forecasting of multi-level processes, strategic and tactical forecasting, and the art of diplomacy in negotiations, Mark Romanov possesses exceptional qualifications and a team of highly specialized professionals to solve any client's challenges.",
       "hero.m1": "Multi-jurisdictional mandates",
       "hero.m2": "ICC · LCIA arbitration frameworks",
       "hero.m3": "Privilege & NDA from first contact",
+
+      "bio.eyebrow": "Biography",
+      "bio.h": "Mark Vladimirovich Romanov",
+      "bio.k1": "Practice focus",
+      "bio.b1": "Mark Vladimirovich Romanov is an international lawyer whose work focuses on cross-border commercial law, international arbitration, banking, and corporate governance.",
+      "bio.k2": "Clients and mandates",
+      "bio.b2": "Mark Romanov's team advises corporations, financial institutions, government-related entities, and private clients on complex international matters \u2014 from structuring, management, asset protection, and the creation of business holding structures to trade finance, dispute resolution, and regulatory integrity.",
+      "bio.k3": "Geography and languages",
+      "bio.b3": "His practice spans the European Union, the United Arab Emirates, Russia, and Hong Kong, and he conducts his work in English and Russian.",
+      "bio.k4": "Credentials and appointments",
+      "bio.b4": "He holds a PhD in law, officially recognized in the United Kingdom, and is a current member of the International Bar Association. In addition to practicing law, he holds senior positions at several international investment firms.",
 
       "about.eyebrow": "About",
       "about.h": "A single point of accountability for cross-border matters",
@@ -47,9 +58,9 @@
       "about.p3t": "Diplomacy as an instrument",
       "about.p3b": "Many cross-border problems resolve faster through negotiation and institutional dialogue than through litigation. Where a settlement serves the client better than a ruling, that route is built first.",
 
-      "pr.eyebrow": "Practice Areas",
-      "pr.h": "Five disciplines, one standard of counsel",
-      "pr.lead": "Each module is run as a self-contained mandate and combined with the others when a matter crosses into several of them at once.",
+      "pr.eyebrow": "Counsel across borders",
+      "pr.h": "A practice built for complex, multi-jurisdictional matters",
+      "pr.lead": "Instructed where commercial stakes, regulatory exposure and several legal systems meet in a single matter.",
 
       "pr1.t": "International Arbitration & Disputes",
       "pr1.b": "Representation and advisory in institutional and cross-border arbitration, including ICC and LCIA frameworks, and the strategy that surrounds multi-forum disputes.",
@@ -125,7 +136,7 @@
 
     ru: {
       "doc.title": "Марк Романов — международный юрист, юрисконсульт и арбитр",
-      "doc.desc": "Стратегический консалтинг в международном арбитраже, трансграничных спорах, защите при экстрадиции, санкционном комплаенсе и защите глобальных активов.",
+      "doc.desc": "Стратегический консалтинг в международном арбитраже, трансграничных спорах, защите при экстрадиции, санкционном комплаенсе, управлении и секьюритизации активов.",
 
       "a11y.skip": "Перейти к содержанию",
       "a11y.menu": "Открыть меню",
@@ -147,11 +158,22 @@
       "hero.eyebrow": "Частная международная практика",
       "hero.name": "Марк Романов",
       "hero.role": "Международный юрист, юрисконсульт и арбитр",
-      "hero.sub": "Стратегический консалтинг · Трансграничные споры · Защита глобальных активов",
+      "hero.sub": "Стратегический консалтинг · Трансграничные споры · Управление и секьюритизация активов",
       "hero.bio": "Обладая обширным опытом в области международного права, глобального управления, аналитики и прогнозирования разноуровневых процессов, стратегического и тактического предиктата, искусства дипломатии в переговорах, Марк Романов имеет исключительную квалификацию и команду узкопрофильных профессионалов для решения любых поставленных клиентом задач.",
       "hero.m1": "Мандаты в нескольких юрисдикциях",
       "hero.m2": "Арбитраж по регламентам ICC и LCIA",
-      "hero.m3": "Тайна и NDA с первого контакта",
+      "hero.m3": "Юридическая тайна и NDA с первого контакта",
+
+      "bio.eyebrow": "Биография",
+      "bio.h": "Марк Владимирович Романов",
+      "bio.k1": "Профиль практики",
+      "bio.b1": "Марк Владимирович Романов — международный юрист, работа которого сосредоточена на трансграничном коммерческом праве, международном арбитраже, банковском праве и корпоративном управлении.",
+      "bio.k2": "Клиенты и поручения",
+      "bio.b2": "Команда Марка Романова консультирует корпорации, финансовые институты, структуры с государственным участием и частных клиентов по сложным международным вопросам — от структурирования, управления, защиты активов и создания бизнес-холдингов до торгового финансирования, разрешения споров и соблюдения регуляторных требований.",
+      "bio.k3": "География и языки",
+      "bio.b3": "Практика охватывает Европейский союз, Объединённые Арабские Эмираты, Россию и Гонконг; работа ведётся на английском и русском языках.",
+      "bio.k4": "Квалификация и должности",
+      "bio.b4": "Имеет степень PhD в области права, официально признанную в Великобритании, и является действующим членом International Bar Association. Помимо юридической практики занимает руководящие должности в нескольких международных инвестиционных компаниях.",
 
       "about.eyebrow": "Профиль",
       "about.h": "Единая точка ответственности в трансграничных делах",
@@ -159,13 +181,13 @@
       "about.p1t": "Конфиденциальность по умолчанию",
       "about.p1b": "Каждое поручение начинается с адвокатской тайны и соглашения о неразглашении. Материалы дела передаются по зашифрованным каналам, а круг лиц с доступом намеренно узок.",
       "about.p2t": "Стратегия прежде процедуры",
-      "about.p2b": "Процессуальные шаги следуют за позицией, а не наоборот. Работа начинается с анализа и прогнозирования того, как поведут себя форумы, регуляторы и оппоненты, — и уже из этого выбирается маршрут.",
+      "about.p2b": "Процессуальные шаги следуют за позицией, а не наоборот. Работа начинается с анализа и прогнозирования того, как поведут себя субъекты, регуляторы и оппоненты, — и уже из этого выбирается маршрут.",
       "about.p3t": "Дипломатия как инструмент",
       "about.p3b": "Многие трансграничные проблемы решаются переговорами и институциональным диалогом быстрее, чем судом. Там, где урегулирование выгоднее решения, этот маршрут выстраивается первым.",
 
-      "pr.eyebrow": "Практики",
-      "pr.h": "Пять дисциплин, единый стандарт работы",
-      "pr.lead": "Каждый модуль ведётся как самостоятельное поручение и объединяется с другими, когда дело затрагивает несколько направлений одновременно.",
+      "pr.eyebrow": "Юридическая помощь поверх границ",
+      "pr.h": "Практика, выстроенная под сложные дела в нескольких юрисдикциях",
+      "pr.lead": "Поручения принимаются там, где в одном деле сходятся коммерческие ставки, регуляторные риски и несколько правовых систем.",
 
       "pr1.t": "Международный арбитраж и разрешение споров",
       "pr1.b": "Представление интересов и консультации в институциональном и трансграничном арбитраже, включая рамки ICC и LCIA, а также разработка стратегии разрешения споров в нескольких юрисдикциях.",
@@ -206,7 +228,7 @@
       "in.2t": "Санкционные риски в многоуровневых структурах владения",
       "in.2b": "Где сходятся тесты контроля, лицензионные маршруты и защита бенефициара в трансграничных холдингах.",
       "in.tag2": "Санкции",
-      "in.3t": "Исполнение решений в недружественных форумах",
+      "in.3t": "Исполнение решений в недружественных юрисдикциях",
       "in.3b": "Стратегия признания, розыска активов и параллельных процессов, когда должник рассредоточен.",
       "in.tag3": "Арбитраж",
       "in.4t": "Легализация цифровых активов в правовом поле",
