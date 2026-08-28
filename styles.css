@@ -62,7 +62,8 @@ input,select,textarea{font:inherit;color:inherit}
 /* ---------- primitives ---------- */
 .wrap{max-width:var(--maxw);margin:0 auto;padding:0 32px}
 .section{padding:clamp(72px,9vw,132px) 0;border-top:1px solid var(--slate)}
-.sec-head{max-width:820px;margin-bottom:clamp(40px,5vw,68px);display:flex;flex-direction:column;gap:20px}
+.sec-head{max-width:820px;margin:0 auto clamp(40px,5vw,68px);display:flex;flex-direction:column;
+  align-items:center;text-align:center;gap:20px}
 
 .eyebrow{
   /* solid gold, not background-clip:text — the ::after rule below is a child box
@@ -73,6 +74,12 @@ input,select,textarea{font:inherit;color:inherit}
 .eyebrow::after{content:"";height:1px;flex:1;max-width:120px;background:linear-gradient(90deg,var(--gold-deep),transparent)}
 .eyebrow.center{justify-content:center}
 .eyebrow.center::after{display:none}
+/* section kicker — a mirrored hairline on each side. width:100% matters: .sec-head
+   is an align-items:center flex column, so a shrink-to-fit <p> would leave the
+   flex:1 hairlines with nothing to grow into */
+.sec-head .eyebrow{width:100%;justify-content:center}
+.sec-head .eyebrow::before{content:"";height:1px;flex:1;max-width:120px;
+  background:linear-gradient(90deg,transparent,var(--gold-deep))}
 
 h1,h2,h3,h4{font-family:var(--serif);font-weight:400;margin:0;letter-spacing:-.01em;text-wrap:balance}
 h2{font-size:clamp(30px,4vw,50px);line-height:1.12}
@@ -162,7 +169,6 @@ html[lang="ru"] .hero-name{font-family:var(--serif);letter-spacing:.03em}
 .hero-role{font-family:var(--serif);font-size:clamp(17px,2.1vw,27px);font-weight:400;font-style:italic;
   line-height:1.35;color:var(--pearl);opacity:.92}
 .hero-sub{margin-top:22px;font-size:12.5px;font-weight:400;letter-spacing:.2em;text-transform:uppercase;color:var(--pearl-2)}
-.hero-bio{max-width:78ch;color:var(--pearl-2);font-size:16.5px;line-height:1.85}
 .hero-cta{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin:38px 0 0}
 .hero-meta{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:14px 34px;padding:0;
   margin:clamp(34px,4vw,52px) 0 0}
