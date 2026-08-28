@@ -1,335 +1,445 @@
-(function(){
+/* ============================================================
+   MARK ROMANOV — interaction layer
+   i18n · navigation · reveal · modals · form
+   ============================================================ */
+(function () {
   "use strict";
-  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  document.getElementById("yr").textContent = new Date().getFullYear();
+
+  /* ---------- dictionary ---------- */
+  var I18N = {
+    en: {
+      "doc.title": "Mark Romanov — International Lawyer, Jurisconsult & Arbitrator",
+      "doc.desc": "Strategic counsel in international arbitration, cross-border disputes, extradition defence, sanctions compliance and global asset protection.",
+
+      "a11y.skip": "Skip to main content",
+      "a11y.menu": "Open menu",
+      "a11y.menuClose": "Close menu",
+      "a11y.close": "Close",
+
+      "brand.sub": "International Lawyer · Jurisconsult · Arbitrator",
+      "nav.about": "About",
+      "nav.practice": "Practice Areas",
+      "nav.media": "Media",
+      "nav.insights": "Insights",
+      "nav.contact": "Contact",
+
+      "cta.consult": "Private Consultation",
+      "cta.brief": "Request Confidential Briefing",
+      "cta.explore": "Explore Practice Areas",
+      "cta.copy": "Copy",
+
+      "hero.eyebrow": "Private International Practice",
+      "hero.name": "Mark Romanov",
+      "hero.role": "International Lawyer, Jurisconsult & Arbitrator",
+      "hero.sub": "Strategic Counsel · Cross-Border Dispute Resolution · Global Asset Protection",
+      "hero.bio": "With extensive experience in international law, global governance, analytics and forecasting of multi-level processes, strategic and tactical forecasting, and the art of diplomacy in negotiations, Mark Romanov possesses exceptional qualifications and a team of highly specialized professionals to solve any client's challenges.",
+      "hero.m1": "Multi-jurisdictional mandates",
+      "hero.m2": "ICC · LCIA arbitration frameworks",
+      "hero.m3": "Privilege & NDA from first contact",
+
+      "about.eyebrow": "About",
+      "about.h": "A single point of accountability for cross-border matters",
+      "about.lead": "Mandates rarely stay within one legal system. Counsel is structured to hold the whole picture — proceedings, assets, exposure and reputation — under one coordinated strategy, with specialists engaged where a jurisdiction demands them.",
+      "about.p1t": "Discretion by default",
+      "about.p1b": "Every engagement opens under legal privilege and non-disclosure. Case materials are handled through encrypted channels, and the circle of people with access is kept deliberately narrow.",
+      "about.p2t": "Strategy before procedure",
+      "about.p2b": "Filings follow a position, not the reverse. Each matter begins with analysis and forecasting of how forums, regulators and counterparties are likely to act, and the procedural route is chosen from there.",
+      "about.p3t": "Diplomacy as an instrument",
+      "about.p3b": "Many cross-border problems resolve faster through negotiation and institutional dialogue than through litigation. Where a settlement serves the client better than a ruling, that route is built first.",
+
+      "pr.eyebrow": "Practice Areas",
+      "pr.h": "Five disciplines, one standard of counsel",
+      "pr.lead": "Each module is run as a self-contained mandate and combined with the others when a matter crosses into several of them at once.",
+
+      "pr1.t": "International Arbitration & Disputes",
+      "pr1.b": "Representation and advisory in institutional and cross-border arbitration, including ICC and LCIA frameworks, and the strategy that surrounds multi-forum disputes.",
+      "pr2.t": "Legal assistance in complex international cases",
+      "pr2.b": "Interpol Notices, extradition, asylum. Confidential analysis, preparation of master dossiers and positions, full legal support. Defense against detention and extradition. International protection, protection from unlawful actions.",
+      "pr3.t": "Banking and International Finance",
+      "pr3.b": "Cross-border trade finance mechanisms, instruments, and structures with thorough analysis of financial crime risks and sanctions compliance. Building secure ownership structures and protecting ultimate beneficiaries. Digital asset transactions, fund transfer chains, and legalization in accordance with applicable law.",
+      "pr4.t": "Real Estate",
+      "pr4.b": "Asset management, insurance and asset protection, and sanctions recovery. We provide due diligence and support for real estate transactions. We handle cross-border settlements in complex transactions. We work with investment funds and private investors.",
+      "pr5.t": "Analytical Center and Troubleshooting",
+      "pr5.b": "Information collection and analysis, OSINT, corporate and private intelligence, strategic consulting, and risk management. Tailored solutions for personal and corporate problems. Interaction with government agencies worldwide.",
+      "md.eyebrow": "Media & Press",
+      "md.h": "Speaking, analysis and commentary",
+      "md.lead": "Selected formats for conferences, editorial desks and research teams. Materials and availability are confirmed individually.",
+      "md.t1": "Speaking",
+      "md.t2": "Publications",
+      "md.t3": "Commentary",
+      "md.c1t": "Keynote Speeches & International Legal Forums",
+      "md.c1b": "Keynotes and panel participation on arbitration practice, cross-border enforcement and the mechanics of multi-jurisdictional risk.",
+      "md.c2t": "Thought Leadership, Legal Analysis & Whitepapers",
+      "md.c2b": "Long-form analysis and briefing papers prepared for institutional readers, counsel teams and private clients.",
+      "md.c3t": "Press Commentary on Global Sanctions & Extradition Frameworks",
+      "md.c3b": "Comment for journalists on sanctions regimes, Interpol procedure and extradition practice, on the record or on background.",
+      "md.pk": "Press Kit & Media Inquiries",
+      "md.pkb": "Biography, portrait photography, credentials and speaking topics are provided on request to accredited media.",
+      "md.pkc": "Request Press Kit",
+      "md.pkm": "Accredited media receive a biography, high-resolution portrait photography, the coat of arms in vector form, credentials and current speaking topics. Interview requests are answered with a confirmed window and agreed subject matter.",
+      "md.pr1": "Press desk",
+      "md.pr2": "Signal (media)",
+      "md.pkn": "Commentary on active mandates is not provided. Subjects covered are listed under Insights.",
+
+      "in.eyebrow": "Insights",
+      "in.h": "Analytical notes and briefing papers",
+      "in.lead": "Working subjects on which analysis is maintained. Full papers are shared with clients and accredited media on request.",
+      "in.1t": "Red Notices and the limits of provisional arrest",
+      "in.1b": "How review mechanisms, admissibility and political-motivation arguments interact in practice.",
+      "in.tag1": "Extradition",
+      "in.2t": "Sanctions exposure in multi-tier ownership structures",
+      "in.2b": "Where control tests, licensing routes and beneficiary protection meet in cross-border holdings.",
+      "in.tag2": "Sanctions",
+      "in.3t": "Enforcement of awards across uncooperative forums",
+      "in.3b": "Strategy for recognition, asset tracing and parallel proceedings when a debtor is dispersed.",
+      "in.tag3": "Arbitration",
+      "in.4t": "Legalization of digital assets under applicable law",
+      "in.4b": "Transfer chains, source-of-funds evidence and the regulatory perimeter for private holdings.",
+      "in.tag4": "Digital assets",
+
+      "ct.eyebrow": "Confidential Advisory",
+      "ct.h": "Request a private consultation",
+      "ct.lead": "Leave a name and a convenient way to reach you. The reply confirms a time and a secure channel for the conversation itself.",
+      "ct.badge": "All inquiries protected by strict legal privilege and NDA standards.",
+      "ct.ch1": "Signal",
+      "ct.ch2": "Proton Mail",
+      "ct.ch3": "Telegram",
+      "ct.name": "Name",
+      "ct.namep": "How to address you",
+      "ct.reach": "How to reach you",
+      "ct.reachp": "Email, Telegram, Signal or phone",
+      "ct.msg": "Briefly about your matter",
+      "ct.msgp": "Optional — a few words are enough",
+      "ct.submit": "Request a consultation",
+      "ct.note": "Transmission does not create a counsel–client relationship until an engagement is confirmed in writing.",
+
+      "ftr.nav": "Navigation",
+      "ftr.ch": "Encrypted channels",
+      "ftr.disc": "This website provides general information about the practice of Mark Romanov and does not constitute legal advice, an offer of representation, or a solicitation in any jurisdiction where such an offer would be unlawful. Transmitting information through this site does not create a counsel–client relationship until an engagement is confirmed in writing. Services are rendered in accordance with the regulatory and professional requirements applicable in each relevant jurisdiction.",
+      "ftr.priv": "Legal privilege · NDA standard · Encrypted correspondence",
+
+      "ok.h": "Request received",
+      "ok.b": "A reply follows on the contact you left, normally within one business day.",
+      "copy.done": "Copied"
+    },
+
+    ru: {
+      "doc.title": "Марк Романов — международный юрист, юрисконсульт и арбитр",
+      "doc.desc": "Стратегический консалтинг в международном арбитраже, трансграничных спорах, защите при экстрадиции, санкционном комплаенсе и защите глобальных активов.",
+
+      "a11y.skip": "Перейти к содержанию",
+      "a11y.menu": "Открыть меню",
+      "a11y.menuClose": "Закрыть меню",
+      "a11y.close": "Закрыть",
+
+      "brand.sub": "Международный юрист · Юрисконсульт · Арбитр",
+      "nav.about": "Профиль",
+      "nav.practice": "Практики",
+      "nav.media": "Медиа",
+      "nav.insights": "Аналитика",
+      "nav.contact": "Контакты",
+
+      "cta.consult": "Частная консультация",
+      "cta.brief": "Запросить конфиденциальный брифинг",
+      "cta.explore": "Перейти к практикам",
+      "cta.copy": "Копировать",
+
+      "hero.eyebrow": "Частная международная практика",
+      "hero.name": "Марк Романов",
+      "hero.role": "Международный юрист, юрисконсульт и арбитр",
+      "hero.sub": "Стратегический консалтинг · Трансграничные споры · Защита глобальных активов",
+      "hero.bio": "Обладая обширным опытом в области международного права, глобального управления, аналитики и прогнозирования разноуровневых процессов, стратегического и тактического предиктата, искусства дипломатии в переговорах, Марк Романов имеет исключительную квалификацию и команду узкопрофильных профессионалов для решения любых поставленных клиентом задач.",
+      "hero.m1": "Мандаты в нескольких юрисдикциях",
+      "hero.m2": "Арбитраж по регламентам ICC и LCIA",
+      "hero.m3": "Тайна и NDA с первого контакта",
+
+      "about.eyebrow": "Профиль",
+      "about.h": "Единая точка ответственности в трансграничных делах",
+      "about.lead": "Поручения редко умещаются в одну правовую систему. Работа построена так, чтобы удерживать всю картину — процессы, активы, риски и репутацию — в рамках одной согласованной стратегии, привлекая профильных специалистов там, где этого требует юрисдикция.",
+      "about.p1t": "Конфиденциальность по умолчанию",
+      "about.p1b": "Каждое поручение начинается с адвокатской тайны и соглашения о неразглашении. Материалы дела передаются по зашифрованным каналам, а круг лиц с доступом намеренно узок.",
+      "about.p2t": "Стратегия прежде процедуры",
+      "about.p2b": "Процессуальные шаги следуют за позицией, а не наоборот. Работа начинается с анализа и прогнозирования того, как поведут себя форумы, регуляторы и оппоненты, — и уже из этого выбирается маршрут.",
+      "about.p3t": "Дипломатия как инструмент",
+      "about.p3b": "Многие трансграничные проблемы решаются переговорами и институциональным диалогом быстрее, чем судом. Там, где урегулирование выгоднее решения, этот маршрут выстраивается первым.",
+
+      "pr.eyebrow": "Практики",
+      "pr.h": "Пять дисциплин, единый стандарт работы",
+      "pr.lead": "Каждый модуль ведётся как самостоятельное поручение и объединяется с другими, когда дело затрагивает несколько направлений одновременно.",
+
+      "pr1.t": "Международный арбитраж и разрешение споров",
+      "pr1.b": "Представление интересов и консультации в институциональном и трансграничном арбитраже, включая рамки ICC и LCIA, а также разработка стратегии разрешения споров в нескольких юрисдикциях.",
+      "pr2.t": "Юридическая помощь в сложных международных делах",
+      "pr2.b": "Интерпол-уведомления, экстрадиция, получение убежища. Конфиденциальный анализ, подготовка мастер-досье и позиции, полное юридическое сопровождение. Защита при угрозе задержания, экстрадиции. Международная защита, защита от неправомерных действий.",
+      "pr3.t": "Банковское дело и международные финансы",
+      "pr3.b": "Трансграничные механизмы, инструменты и структуры торгового финансирования с тщательным анализом рисков финансовых преступлений и соблюдения санкций. Построение безопасной структуры владения, защита конечного бенефициара. Операции с цифровыми активами, цепочки перевода средств и легализация в соответствии с законодательством.",
+      "pr4.t": "Недвижимость",
+      "pr4.b": "Управление активами, страхование и защита активов, выход из санкционных ситуаций. Проверка и сопровождение сделок с недвижимостью. Проведение трансграничных расчётов при сложных сделках. Сотрудничество с инвестиционными фондами и частными инвесторами.",
+      "pr5.t": "Аналитический центр и Траблшутинг",
+      "pr5.b": "Сбор и анализ информации, ОСИНТ, корпоративная и частная разведка, стратегический консалтинг и риск-менеджмент. Индивидуальные решения персональных и корпоративных проблем. Взаимодействие с административными структурами разных стран.",
+      "md.eyebrow": "Медиа и пресса",
+      "md.h": "Выступления, аналитика и комментарии",
+      "md.lead": "Отобранные форматы для конференций, редакций и исследовательских команд. Материалы и доступность подтверждаются индивидуально.",
+      "md.t1": "Выступления",
+      "md.t2": "Публикации",
+      "md.t3": "Комментарии",
+      "md.c1t": "Ключевые доклады и международные юридические форумы",
+      "md.c1b": "Доклады и участие в панелях по арбитражной практике, трансграничному исполнению решений и механике рисков в нескольких юрисдикциях.",
+      "md.c2t": "Экспертиза, правовой анализ и аналитические доклады",
+      "md.c2b": "Развёрнутый анализ и брифинги для институциональных читателей, юридических команд и частных клиентов.",
+      "md.c3t": "Комментарии для прессы о санкциях и экстрадиции",
+      "md.c3b": "Комментарии журналистам по санкционным режимам, процедурам Интерпола и практике экстрадиции — под запись или в качестве фона.",
+      "md.pk": "Пресс-кит и запросы СМИ",
+      "md.pkb": "Биография, портретная съёмка, сведения о квалификации и темы выступлений предоставляются аккредитованным СМИ по запросу.",
+      "md.pkc": "Запросить пресс-кит",
+      "md.pkm": "Аккредитованные СМИ получают биографию, портретную съёмку в высоком разрешении, герб в векторе, сведения о квалификации и актуальные темы выступлений. На запросы об интервью отвечаем с подтверждённым окном и согласованной темой.",
+      "md.pr1": "Пресс-служба",
+      "md.pr2": "Signal (для СМИ)",
+      "md.pkn": "Комментарии по текущим поручениям не предоставляются. Круг тем указан в разделе «Аналитика».",
+
+      "in.eyebrow": "Аналитика",
+      "in.h": "Аналитические записки и брифинги",
+      "in.lead": "Темы, по которым ведётся постоянный анализ. Полные материалы предоставляются клиентам и аккредитованным СМИ по запросу.",
+      "in.1t": "Red Notice и пределы предварительного ареста",
+      "in.1b": "Как на практике взаимодействуют механизмы пересмотра, приемлемость и доводы о политической мотивации.",
+      "in.tag1": "Экстрадиция",
+      "in.2t": "Санкционные риски в многоуровневых структурах владения",
+      "in.2b": "Где сходятся тесты контроля, лицензионные маршруты и защита бенефициара в трансграничных холдингах.",
+      "in.tag2": "Санкции",
+      "in.3t": "Исполнение решений в недружественных форумах",
+      "in.3b": "Стратегия признания, розыска активов и параллельных процессов, когда должник рассредоточен.",
+      "in.tag3": "Арбитраж",
+      "in.4t": "Легализация цифровых активов в правовом поле",
+      "in.4b": "Цепочки перевода средств, доказывание источника и регуляторный периметр для частных владений.",
+      "in.tag4": "Цифровые активы",
+
+      "ct.eyebrow": "Конфиденциальное обращение",
+      "ct.h": "Запросить частную консультацию",
+      "ct.lead": "Оставьте имя и удобный способ связи. В ответном сообщении подтвердим время и защищённый канал для самого разговора.",
+      "ct.badge": "Все обращения защищены адвокатской тайной и стандартами NDA.",
+      "ct.ch1": "Signal",
+      "ct.ch2": "Proton Mail",
+      "ct.ch3": "Telegram",
+      "ct.name": "Имя",
+      "ct.namep": "Как к вам обращаться",
+      "ct.reach": "Способ связи",
+      "ct.reachp": "Почта, Telegram, Signal или телефон",
+      "ct.msg": "Кратко о вопросе",
+      "ct.msgp": "Необязательно — достаточно нескольких слов",
+      "ct.submit": "Запросить консультацию",
+      "ct.note": "Отправка не создаёт отношений «юрист — клиент» до письменного подтверждения поручения.",
+
+      "ftr.nav": "Навигация",
+      "ftr.ch": "Защищённые каналы",
+      "ftr.disc": "Сайт носит общий информационный характер, не является юридической консультацией, офертой о представительстве или предложением услуг в юрисдикциях, где такое предложение противоречит закону. Передача информации через сайт не создаёт отношений «юрист — клиент» до письменного подтверждения поручения. Услуги оказываются с соблюдением регуляторных и профессиональных требований применимых юрисдикций.",
+      "ftr.priv": "Адвокатская тайна · Стандарт NDA · Шифрованная переписка",
+
+      "ok.h": "Запрос принят",
+      "ok.b": "Ответ придёт на оставленный вами контакт, как правило в течение одного рабочего дня.",
+      "copy.done": "Скопировано"
+    }
+  };
+
+  var $ = function (s, r) { return (r || document).querySelector(s); };
+  var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
+
+  /* ---------- i18n ---------- */
+  var lang = "en";
+
+  function t(key) {
+    var d = I18N[lang] || I18N.en;
+    return Object.prototype.hasOwnProperty.call(d, key) ? d[key] : (I18N.en[key] || key);
+  }
+
+  function applyLang(next) {
+    lang = I18N[next] ? next : "en";
+    document.documentElement.lang = lang;
+
+    $$("[data-i18n]").forEach(function (el) { el.textContent = t(el.getAttribute("data-i18n")); });
+    $$("[data-i18n-ph]").forEach(function (el) { el.placeholder = t(el.getAttribute("data-i18n-ph")); });
+    $$("[data-i18n-aria]").forEach(function (el) { el.setAttribute("aria-label", t(el.getAttribute("data-i18n-aria"))); });
+
+    document.title = t("doc.title");
+    var md = $('meta[name="description"]');
+    if (md) md.setAttribute("content", t("doc.desc"));
+
+    $$(".lang-b").forEach(function (b) {
+      b.setAttribute("aria-pressed", String(b.getAttribute("data-lang") === lang));
+    });
+
+    var burger = $("#burger");
+    if (burger) {
+      burger.setAttribute("aria-label", burger.getAttribute("aria-expanded") === "true" ? t("a11y.menuClose") : t("a11y.menu"));
+    }
+
+    try { localStorage.setItem("mr-lang", lang); } catch (e) {}
+  }
+
+  function initLang() {
+    var saved = null;
+    try { saved = localStorage.getItem("mr-lang"); } catch (e) {}
+    if (!saved) {
+      var nav = (navigator.language || "en").toLowerCase();
+      saved = /^(ru|be|kk|uk|ky|uz|hy|az)/.test(nav) ? "ru" : "en";
+    }
+    applyLang(saved);
+  }
+
+  $$(".lang-b").forEach(function (b) {
+    b.addEventListener("click", function () { applyLang(b.getAttribute("data-lang")); });
+  });
 
   /* ---------- header ---------- */
-  var hdr = document.getElementById("hdr");
-  var onScroll = function(){ hdr.classList.toggle("stuck", window.scrollY > 24); };
-  onScroll(); window.addEventListener("scroll", onScroll, {passive:true});
+  var hdr = $("#hdr");
+  var onScroll = function () {
+    if (hdr) hdr.classList.toggle("stuck", window.scrollY > 12);
+  };
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
 
-  var burger = document.getElementById("burger"), mnav = document.getElementById("mnav");
-  burger.addEventListener("click", function(){
-    var open = mnav.classList.toggle("open");
-    burger.setAttribute("aria-expanded", open ? "true" : "false");
-  });
-
-  /* ---------- smooth scroll ---------- */
-  function goTo(sel){
-    var el = document.querySelector(sel); if(!el) return;
-    var y = el.getBoundingClientRect().top + window.scrollY - 84;
-    window.scrollTo({top:y, behavior: reduce ? "auto" : "smooth"});
+  var burger = $("#burger");
+  var mnav = $("#mnav");
+  function setMenu(open) {
+    if (!burger || !mnav) return;
+    burger.setAttribute("aria-expanded", String(open));
+    burger.setAttribute("aria-label", open ? t("a11y.menuClose") : t("a11y.menu"));
+    mnav.hidden = !open;
   }
-  document.addEventListener("click", function(e){
-    var s = e.target.closest("[data-scroll]");
-    if(s){ e.preventDefault(); closeAll(); goTo(s.getAttribute("data-scroll")); return; }
-    var a = e.target.closest('a[href^="#"]');
-    if(a && a.getAttribute("href").length > 1){
-      e.preventDefault();
-      mnav.classList.remove("open"); burger.setAttribute("aria-expanded","false");
-      var t = a.getAttribute("data-tab"); if(t) selectTab(t);
-      goTo(a.getAttribute("href"));
-    }
-  });
+  if (burger) {
+    burger.addEventListener("click", function () {
+      setMenu(burger.getAttribute("aria-expanded") !== "true");
+    });
+  }
+  if (mnav) {
+    $$("a", mnav).forEach(function (a) { a.addEventListener("click", function () { setMenu(false); }); });
+  }
+  window.addEventListener("resize", function () { if (window.innerWidth > 1080) setMenu(false); });
+
+  /* ---------- reveal ---------- */
+  var rvs = $$(".rv");
+  if ("IntersectionObserver" in window && rvs.length) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en, i) {
+        if (!en.isIntersecting) return;
+        var el = en.target;
+        setTimeout(function () { el.classList.add("in"); }, Math.min(i * 70, 280));
+        io.unobserve(el);
+      });
+    }, { rootMargin: "0px 0px -12% 0px", threshold: 0.12 });
+    rvs.forEach(function (el) { io.observe(el); });
+  } else {
+    rvs.forEach(function (el) { el.classList.add("in"); });
+  }
 
   /* ---------- modals ---------- */
   var lastFocus = null;
-  function openModal(id){
-    var ov = document.getElementById("ov-" + id); if(!ov) return;
+
+  function focusables(root) {
+    return $$('a[href],button:not([disabled]),input,select,textarea,[tabindex]:not([tabindex="-1"])', root)
+      .filter(function (el) { return el.offsetParent !== null || el === document.activeElement; });
+  }
+
+  function openOv(ov) {
     lastFocus = document.activeElement;
-    ov.hidden = false; document.body.style.overflow = "hidden";
-    var f = ov.querySelector("button, [href], input, select, textarea"); if(f) f.focus();
+    ov.hidden = false;
+    document.body.style.overflow = "hidden";
+    var f = focusables(ov);
+    if (f.length) f[0].focus();
   }
-  function closeAll(){
-    var any = false;
-    document.querySelectorAll(".ov").forEach(function(o){ if(!o.hidden){ o.hidden = true; any = true; } });
-    if(any){ document.body.style.overflow = ""; if(lastFocus) lastFocus.focus(); }
-  }
-  document.addEventListener("click", function(e){
-    var m = e.target.closest("[data-modal]");
-    if(m){ e.preventDefault(); mnav.classList.remove("open"); openModal(m.getAttribute("data-modal")); return; }
-    if(e.target.closest("[data-close]") || e.target.classList.contains("ov")) closeAll();
-  });
-  document.addEventListener("keydown", function(e){ if(e.key === "Escape") closeAll(); });
 
-  document.querySelectorAll(".copy").forEach(function(b){
-    b.addEventListener("click", function(){
-      var v = b.parentNode.querySelector("[data-copy]").textContent.trim();
-      var done = function(){ var o = b.textContent; b.textContent = "Скопировано"; setTimeout(function(){ b.textContent = o; }, 1600); };
-      if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(v).then(done).catch(done); }
-      else { done(); }
+  function closeOv(ov) {
+    ov.hidden = true;
+    document.body.style.overflow = "";
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+
+  function closeAny() {
+    $$(".ov").forEach(function (ov) { if (!ov.hidden) closeOv(ov); });
+  }
+
+  $$(".ov").forEach(function (ov) {
+    ov.addEventListener("click", function (e) { if (e.target === ov) closeOv(ov); });
+    ov.addEventListener("keydown", function (e) {
+      if (e.key !== "Tab") return;
+      var f = focusables(ov);
+      if (!f.length) return;
+      var first = f[0], last = f[f.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
     });
   });
 
-  /* ---------- practices ---------- */
-  var PRACTICES = {
-    emergency: {
-      code:"P—01 / Emergency Defense",
-      title:"Экстренная защита и свобода",
-      lead:"Работа в режиме кризиса: когда под угрозой находится физическая свобода, право на въезд и выезд или сам статус пребывания. Реакция считается в часах, а не в неделях.",
-      items:[
-        ["Интерпол: Red Notice и diffusions","Оспаривание в Комиссии по контролю файлов (CCF), удаление данных из системы, превентивные запросы о статусе."],
-        ["Экстрадиционные процедуры","Защита в стране задержания, оспаривание запроса, доказывание политической мотивации преследования."],
-        ["Международные правовые нарушения","Обращения в ЕСПЧ и договорные органы ООН, фиксация процессуальных нарушений на ранней стадии."],
-        ["Политическое убежище","Подготовка доказательной базы, сопровождение процедуры, координация с профильным counsel в стране обращения."],
-        ["Альтернативное гражданство и резиденция","Программы получения второго паспорта и ВНЖ как элемент стратегии защиты, а не как самостоятельный продукт."]
-      ],
-      aside:[["Реакция","до 4 часов","gold"],["Формат","Кризисный штаб 24/7",""],["География","ЕС · UK · Залив · Азия",""]]
-    },
-    sanctions: {
-      code:"P—02 / Sanctions & Compliance",
-      title:"Санкционный комплаенс и риски",
-      lead:"Санкционное ограничение почти всегда бьёт шире формулировки: блокируются платежи, рушится банковский onboarding, партнёры выходят из сделок. Задача — снять ограничение и восстановить операционную способность.",
-      items:[
-        ["Анализ и снижение санкционных рисков","Аудит структуры владения и цепочек контроля, проверка на 50%-правило, устранение уязвимых связей."],
-        ["Снятие ограничений (delisting)","Формирование досье и представление позиции в OFAC, OFSI и Совете ЕС, сопровождение до результата."],
-        ["Разблокировка активов и платежей","Работа с банками-корреспондентами и депозитариями: снятие внутренних стоп-листов, лицензии на операции."],
-        ["Комплаенс-периметр на будущее","Регламенты, скрининг контрагентов и протокол работы, исключающий повторное попадание в ограничения."]
-      ],
-      aside:[["Реакция","24–72 часа","gold"],["Регуляторы","OFAC · OFSI · EU Council",""],["Формат","Проектное сопровождение",""]]
-    },
-    assets: {
-      code:"P—03 / Real Assets",
-      title:"Недвижимость и управление активами",
-      lead:"Трофейный объект — это не только сделка, но и долгосрочная точка уязвимости: титул, налоговый след, публичность владения. Мы закрываем весь цикл — от проверки до защищённой структуры владения.",
-      items:[
-        ["Due Diligence трофейных объектов","Проверка титула, обременений, истории владения и источника происхождения средств до подписания."],
-        ["Трансграничные сделки","Сопровождение покупки и продажи в нескольких юрисдикциях, escrow, валютные и налоговые аспекты."],
-        ["Защита и структурирование владения","Разделение рисков между холдингами, трастами и фондами, защита от обращения взыскания."],
-        ["Управление и выход из актива","Протокол безопасного распоряжения, реструктуризация и подготовка к продаже без раскрытия бенефициара."]
-      ],
-      aside:[["Срок DD","10–20 дней","gold"],["Рынки","London · Dubai · Monaco · CH",""],["Формат","Сделка под ключ",""]]
-    },
-    finance: {
-      code:"P—04 / Capital & Digital",
-      title:"Международные финансы и Web3",
-      lead:"Капитал требует одновременно защищённости и легальной прозрачности. Мы строим структуры, которые проходят банковский комплаенс и налоговую проверку — и при этом не раскрывают бенефициара публично.",
-      items:[
-        ["Защита бенефициара","Юридические конструкции, ограничивающие публичное раскрытие при сохранении полной законности владения."],
-        ["Трасты и частные фонды","Учреждение и администрирование, планирование преемственности, разделение контроля и выгоды."],
-        ["Международный налоговый консалтинг","Резидентство, соглашения об избежании двойного налогообложения, CRS и отчётность по контролируемым структурам."],
-        ["Легализация цифровых активов","Ввод криптоактивов в правовое поле: подтверждение источника, банковский onboarding, отчётность и хранение."]
-      ],
-      aside:[["Горизонт","От 1 месяца","gold"],["Юрисдикции","CH · SG · UAE · Liechtenstein",""],["Формат","Структурный проект",""]]
-    }
-  };
-
-  var panels = document.getElementById("panels");
-  function esc(s){ return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;"); }
-
-  Object.keys(PRACTICES).forEach(function(key, i){
-    var p = PRACTICES[key];
-    var el = document.createElement("div");
-    el.className = "panel"; el.id = "p-" + key; el.setAttribute("role","tabpanel");
-    el.setAttribute("aria-labelledby","tab-" + key);
-    if(i !== 0) el.hidden = true;
-    var svc = p.items.map(function(it){
-      return '<li><svg class="icon icon-sm"><use href="#i-check"/></svg><div><b>' + esc(it[0]) + '</b><span>' + esc(it[1]) + '</span></div></li>';
-    }).join("");
-    var aside = p.aside.map(function(a){
-      return '<div class="aside-row"><div class="k">' + esc(a[0]) + '</div><div class="v ' + (a[2]||"") + '">' + esc(a[1]) + '</div></div>';
-    }).join("");
-    el.innerHTML =
-      '<div><div class="eyebrow compact" style="margin-bottom:16px">' + esc(p.code) + '</div>' +
-      '<h3>' + esc(p.title) + '</h3><p class="lead" style="font-size:15.5px">' + esc(p.lead) + '</p>' +
-      '<ul class="svc">' + svc + '</ul></div>' +
-      '<div class="aside">' + aside +
-      '<button class="btn btn-sm" data-scroll="#contact" style="align-self:flex-start">Обсудить кейс <svg class="icon icon-sm"><use href="#i-arrow"/></svg></button></div>';
-    panels.appendChild(el);
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") { closeAny(); setMenu(false); }
   });
 
-  var tabs = Array.prototype.slice.call(document.querySelectorAll(".tab"));
-  function selectTab(key){
-    tabs.forEach(function(t){
-      var on = t.getAttribute("data-key") === key;
-      t.setAttribute("aria-selected", on ? "true" : "false");
-    });
-    Object.keys(PRACTICES).forEach(function(k){
-      var pane = document.getElementById("p-" + k);
-      pane.hidden = (k !== key);
-      pane.classList.remove("panel-in");
-      if(k === key && !reduce){ void pane.offsetWidth; pane.classList.add("panel-in"); }
-    });
-  }
-  tabs.forEach(function(t, i){
-    t.addEventListener("click", function(){ selectTab(t.getAttribute("data-key")); });
-    t.addEventListener("keydown", function(e){
-      var d = e.key === "ArrowRight" ? 1 : e.key === "ArrowLeft" ? -1 : 0;
-      if(!d) return;
-      e.preventDefault();
-      var n = tabs[(i + d + tabs.length) % tabs.length];
-      n.focus(); selectTab(n.getAttribute("data-key"));
+  $$("[data-close]").forEach(function (b) {
+    b.addEventListener("click", function () {
+      var ov = b.closest(".ov");
+      if (ov) closeOv(ov);
     });
   });
 
-  /* ---------- risk protocol ---------- */
-  var RISKS = {
-    interpol: { label:"Интерпол / экстрадиция", icon:"i-plane", w:3,
-      protocol:"Протокол экстренной защиты свободы",
-      steps:[
-        "Экстренный запрос о наличии данных в системах Интерпола и фиксация текущего статуса.",
-        "Обращение в Комиссию по контролю файлов (CCF) с обоснованием политической мотивации преследования.",
-        "Защитная линия в юрисдикции возможного задержания: превентивные ходатайства и дежурный counsel.",
-        "Оценка альтернативного статуса — убежище, ВНЖ, второе гражданство — как страховочного контура."
-      ], eta:"4 часа" },
-    sanctions: { label:"Санкционные ограничения", icon:"i-scale", w:2,
-      protocol:"Протокол снятия ограничений и разблокировки",
-      steps:[
-        "Аудит структуры владения и цепочек контроля, проверка на 50%-правило.",
-        "Формирование delisting-досье и подача позиции профильному регулятору.",
-        "Работа с банками-корреспондентами: снятие внутренних стоп-листов, разблокировка платежей.",
-        "Комплаенс-регламент дальнейших операций и коммуникации с контрагентами."
-      ], eta:"24 часа" },
-    assets: { label:"Активы под угрозой", icon:"i-landmark", w:1,
-      protocol:"Протокол защиты и реструктурирования владения",
-      steps:[
-        "Юридический и технический Due Diligence по объектам и цепочке титула.",
-        "Реструктурирование владения: холдинги, трасты, фонды, разделение рисков.",
-        "Защита от обеспечительных мер и обращения взыскания в ключевых юрисдикциях.",
-        "Протокол безопасного распоряжения активом и сценарий выхода."
-      ], eta:"72 часа" },
-    corporate: { label:"Корпоративный конфликт", icon:"i-brief", w:2,
-      protocol:"Протокол урегулирования конфликта",
-      steps:[
-        "Картирование конфликта: бенефициары, центры влияния, точки давления.",
-        "OSINT-профилирование оппонента и оценка его реальных ресурсов.",
-        "Параллельные линии: переговорный трек и подготовка судебно-арбитражного сценария.",
-        "Защита ключевых лиц, документов и информационного периметра компании."
-      ], eta:"24 часа" }
-  };
-  var JURS = {
-    eu:{label:"ЕС / Шенген", w:1, note:"Приоритет — превентивная защита при пересечении границ и координация с локальным counsel в стране риска."},
-    uk:{label:"Великобритания", w:1, note:"Акцент на позицию перед OFSI, лондонский судебный трек и контроль репутационного контура."},
-    us:{label:"США", w:2, note:"Фокус на OFAC, экстерриториальное применение норм и долларовые корреспондентские расчёты."},
-    gulf:{label:"ОАЭ / Залив", w:1, note:"Работа с локальными регуляторами и банковским комплаенсом, защита статуса резиденции."},
-    cis:{label:"СНГ", w:2, note:"Повышенный риск административного давления — приоритет отдаётся безопасности физического присутствия."},
-    asia:{label:"Азия (SG / HK)", w:1, note:"Банковский onboarding, прозрачность структуры владения и режим цифровых активов."}
-  };
-
-  var state = { risk:null, jur:null };
-  var riskOpts = document.getElementById("riskOpts"), jurOpts = document.getElementById("jurOpts");
-
-  Object.keys(RISKS).forEach(function(k){
-    var b = document.createElement("button");
-    b.className = "opt"; b.type = "button"; b.setAttribute("aria-pressed","false"); b.dataset.k = k;
-    b.innerHTML = '<svg class="icon icon-sm"><use href="#' + RISKS[k].icon + '"/></svg>' + RISKS[k].label;
-    b.addEventListener("click", function(){ state.risk = k; sync(); });
-    riskOpts.appendChild(b);
-  });
-  Object.keys(JURS).forEach(function(k){
-    var b = document.createElement("button");
-    b.className = "opt"; b.type = "button"; b.setAttribute("aria-pressed","false"); b.dataset.k = k;
-    b.textContent = JURS[k].label;
-    b.addEventListener("click", function(){ state.jur = k; sync(); });
-    jurOpts.appendChild(b);
+  $$('[data-open="press"]').forEach(function (b) {
+    b.addEventListener("click", function () { openOv($("#ov-press")); });
   });
 
-  function sync(){
-    riskOpts.querySelectorAll(".opt").forEach(function(b){ b.setAttribute("aria-pressed", b.dataset.k === state.risk ? "true":"false"); });
-    jurOpts.querySelectorAll(".opt").forEach(function(b){ b.setAttribute("aria-pressed", b.dataset.k === state.jur ? "true":"false"); });
-    document.getElementById("step2").classList.toggle("done", !!state.risk);
-    document.getElementById("step3").classList.toggle("done", !!(state.risk && state.jur));
-    render();
-  }
-
-  function render(){
-    var box = document.getElementById("result");
-    if(!state.risk || !state.jur){
-      box.innerHTML = '<div class="result-empty"><svg class="icon"><use href="#i-alert"/></svg>' +
-        '<p>Выберите характер риска и юрисдикцию, чтобы увидеть предварительный протокол защиты.</p></div>';
-      return;
-    }
-    var r = RISKS[state.risk], j = JURS[state.jur], score = r.w + j.w;
-    var lvl = score >= 5 ? ["Критический уровень","lv-crit"] : score >= 4 ? ["Высокий уровень","lv-high"] : ["Повышенный уровень","lv-med"];
-    var steps = r.steps.map(function(s){ return "<li>" + esc(s) + "</li>"; }).join("");
-    box.innerHTML =
-      '<div class="res">' +
-        '<div class="res-lvl ' + lvl[1] + '"><span class="sq"></span>' + lvl[0] + ' · ' + esc(j.label) + '</div>' +
-        '<h3>' + esc(r.protocol) + '</h3>' +
-        '<p class="res-note">' + esc(j.note) + '</p>' +
-        '<ol class="res-steps">' + steps + '</ol>' +
-        '<div class="res-foot">' +
-          '<div class="res-eta"><span>Первичная реакция</span><b>' + esc(r.eta) + '</b></div>' +
-          '<button class="btn btn-gold" data-scroll="#contact">Запросить протокол по защищённой линии <svg class="icon icon-sm"><use href="#i-arrow"/></svg></button>' +
-        '</div>' +
-      '</div>';
-  }
-
-  /* ---------- intake form ---------- */
-  var form = document.getElementById("intake");
-  form.addEventListener("submit", function(e){
-    e.preventDefault();
-    var type = document.getElementById("type"), handle = document.getElementById("handle");
-    if(!type.value){ type.focus(); type.style.borderColor = "var(--alarm)"; return; }
-    if(!handle.value.trim()){ handle.focus(); handle.style.borderColor = "var(--alarm)"; return; }
-    var nda = document.getElementById("nda").checked;
-    form.innerHTML =
-      '<div class="sent">' +
-        '<div class="ok"><svg class="icon"><use href="#i-check"/></svg></div>' +
-        '<h3 style="font-size:26px">Обращение зафиксировано</h3>' +
-        '<p class="lead" style="font-size:14.5px">Ответ придёт по указанному защищённому каналу. Экстренные обращения обрабатываются в течение 4 часов, остальные — в течение суток.' +
-        (nda ? ' Проект двустороннего NDA будет направлен до первого содержательного разговора.' : '') + '</p>' +
-        '<p class="form-note">Демонстрационная форма — данные не отправлены и не сохранены.</p>' +
-      '</div>';
-  });
-  ["type","handle","jur"].forEach(function(id){
-    var el = document.getElementById(id);
-    if(el) el.addEventListener("input", function(){ el.style.borderColor = ""; });
-  });
-
-  /* ---------- reveal ---------- */
-  var rv = document.querySelectorAll(".rv, .trust-cell");
-  if(reduce || !("IntersectionObserver" in window)){
-    rv.forEach(function(el){ el.classList.add("in"); });
-  } else {
-    var io = new IntersectionObserver(function(entries){
-      entries.forEach(function(en){
-        if(en.isIntersecting){
-          var d = en.target.classList.contains("trust-cell")
-            ? Array.prototype.indexOf.call(en.target.parentNode.children, en.target) * 110 : 0;
-          setTimeout(function(){ en.target.classList.add("in"); }, d);
-          io.unobserve(en.target);
-        }
-      });
-    }, {threshold:.12, rootMargin:"0px 0px -8% 0px"});
-    rv.forEach(function(el){ io.observe(el); });
-  }
-
-  /* ---------- guilloche engraving ---------- */
-  var cv = document.getElementById("guilloche");
-  function drawGuilloche(){
-    var box = cv.parentNode.getBoundingClientRect();
-    var dpr = Math.min(window.devicePixelRatio || 1, 2);
-    var w = Math.max(1, box.width), h = Math.max(1, box.height);
-    cv.width = w * dpr; cv.height = h * dpr;
-    var ctx = cv.getContext("2d");
-    ctx.setTransform(dpr,0,0,dpr,0,0);
-    ctx.clearRect(0,0,w,h);
-    var cs = getComputedStyle(document.documentElement);
-    var rgb = (cs.getPropertyValue("--guilloche-rgb") || "122,92,49").trim();
-    var a0 = parseFloat(cs.getPropertyValue("--guilloche-a")) || 0.20;
-    var cx = w * 0.5, cy = h * 0.44, R = Math.min(w,h) * 0.46;
-    ctx.lineWidth = 0.55;
-    for(var ring = 0; ring < 5; ring++){
-      var k = 5 + ring * 2, amp = R * (0.10 - ring * 0.012), base = R * (0.38 + ring * 0.13);
-      ctx.beginPath();
-      for(var a = 0; a <= Math.PI * 2 + 0.02; a += 0.008){
-        var rr = base + amp * Math.cos(k * a) + amp * 0.35 * Math.sin((k + 3) * a);
-        var x = cx + rr * Math.cos(a), y = cy + rr * Math.sin(a) * 0.92;
-        if(a === 0) ctx.moveTo(x,y); else ctx.lineTo(x,y);
+  /* ---------- copy ---------- */
+  $$("[data-copy]").forEach(function (b) {
+    b.addEventListener("click", function () {
+      var val = b.getAttribute("data-copy");
+      var done = function () {
+        var prev = b.textContent;
+        b.textContent = t("copy.done");
+        setTimeout(function () { b.textContent = prev; }, 1600);
+      };
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(val).then(done).catch(function () {});
+      } else {
+        var ta = document.createElement("textarea");
+        ta.value = val;
+        ta.style.position = "fixed";
+        ta.style.opacity = "0";
+        document.body.appendChild(ta);
+        ta.select();
+        try { document.execCommand("copy"); done(); } catch (e) {}
+        document.body.removeChild(ta);
       }
-      ctx.strokeStyle = "rgba(" + rgb + "," + Math.max(0.03, a0 - ring * 0.03) + ")";
-      ctx.stroke();
-    }
-    for(var i = 0; i < 90; i++){
-      var ang = (i / 90) * Math.PI * 2;
-      ctx.beginPath();
-      ctx.moveTo(cx + R * 0.30 * Math.cos(ang), cy + R * 0.30 * Math.sin(ang) * 0.92);
-      ctx.lineTo(cx + R * 0.34 * Math.cos(ang), cy + R * 0.34 * Math.sin(ang) * 0.92);
-      ctx.strokeStyle = "rgba(" + rgb + "," + (a0 * 0.62) + ")";
-      ctx.stroke();
-    }
+    });
+  });
+
+  /* ---------- form ---------- */
+  var form = $("#form");
+  if (form) {
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var bad = false;
+      $$("input[required],textarea[required]", form).forEach(function (el) {
+        var ok = el.value.trim().length > 0;
+        el.classList.toggle("bad", !ok);
+        if (!ok && !bad) { el.focus(); bad = true; }
+      });
+      if (bad) return;
+
+      var box = document.createElement("div");
+      box.className = "sent";
+      box.setAttribute("role", "status");
+      box.innerHTML =
+        '<div class="sent-ok"><svg class="ic"><use href="#i-check"/></svg></div>' +
+        '<h3></h3><p class="lead"></p>';
+      $("h3", box).textContent = t("ok.h");
+      $("p", box).textContent = t("ok.b");
+      form.replaceWith(box);
+    });
+
+    $$("input,textarea", form).forEach(function (el) {
+      el.addEventListener("input", function () { el.classList.remove("bad"); });
+    });
   }
-  drawGuilloche();
-  var rt; window.addEventListener("resize", function(){ clearTimeout(rt); rt = setTimeout(drawGuilloche, 180); });
+
+  /* ---------- misc ---------- */
+  var y = $("#year");
+  if (y) y.textContent = String(new Date().getFullYear());
+
+  initLang();
 })();
