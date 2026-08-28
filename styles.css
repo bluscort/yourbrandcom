@@ -194,6 +194,8 @@ html[lang="ru"] .hero-name{font-family:var(--serif);letter-spacing:.03em}
 .bio-b{background:var(--obsidian);padding:clamp(24px,2.7vw,36px);display:flex;flex-direction:column;gap:12px;
   transition:background .5s var(--ease)}
 .bio-b:hover{background:var(--onyx)}
+.bio-outro{max-width:76ch;margin:clamp(30px,3.6vw,48px) auto 0;color:var(--pearl-2);font-size:16px;line-height:1.85;
+  text-align:justify;-webkit-hyphens:auto;hyphens:auto}
 .bio-k{font-family:var(--sans);font-size:11px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;
   color:var(--gold-deep);line-height:1.4}
 .bio-b p{color:var(--pearl-2);font-size:15px;line-height:1.8;

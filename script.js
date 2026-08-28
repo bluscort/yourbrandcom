@@ -17,8 +17,8 @@
       "a11y.close": "Close",
 
       "brand.sub": "International Lawyer · Jurisconsult · Arbitrator",
-      "nav.bio": "Biography",
-      "nav.about": "Profile",
+      "nav.profile": "Profile",
+      "nav.approach": "Approach",
       "nav.practice": "Practice Areas",
       "nav.media": "Media",
       "nav.insights": "Insights",
@@ -37,9 +37,8 @@
       "hero.m2": "ICC · LCIA arbitration frameworks",
       "hero.m3": "Privilege & NDA from first contact",
 
-      "bio.eyebrow": "Biography",
-      "bio.h": "Mark Vladimirovich Romanov",
-      "bio.lead": "With extensive experience in international law, global governance, analytics and forecasting of multi-level processes, strategic and tactical forecasting, and the art of diplomacy in negotiations, Mark Romanov possesses exceptional qualifications and a team of highly specialized professionals to solve any client's challenges.",
+      "bio.eyebrow": "Profile",
+      "bio.outro": "With extensive experience in international law, global governance, analytics and forecasting of multi-level processes, strategic and tactical forecasting, and the art of diplomacy in negotiations, Mark Romanov possesses exceptional qualifications and a team of highly specialized professionals to solve any client's challenges.",
       "bio.k1": "Areas of law",
       "bio.b1": "Mark Vladimirovich Romanov is an international lawyer whose work focuses on cross-border commercial law, international arbitration, banking, and corporate governance.",
       "bio.k2": "Clients and mandates",
@@ -49,7 +48,7 @@
       "bio.k4": "Credentials and appointments",
       "bio.b4": "He holds a PhD in law, officially recognized in the United Kingdom, and is a current member of the International Bar Association. In addition to practicing law, he holds senior positions at several international investment firms.",
 
-      "about.eyebrow": "Profile",
+      "about.eyebrow": "Approach",
       "about.h": "A single point of accountability for cross-border matters",
       "about.lead": "Mark Romanov's practice is focused on complex cross-border and multi-jurisdictional matters, where commercial interests, regulatory exposure and the legal systems of several countries meet within a single mandate.",
       "about.p1t": "A single point of accountability",
@@ -151,8 +150,8 @@
       "a11y.close": "Закрыть",
 
       "brand.sub": "Международный юрист · Юрисконсульт · Арбитр",
-      "nav.bio": "Биография",
-      "nav.about": "Профиль",
+      "nav.profile": "Профиль",
+      "nav.approach": "Подход",
       "nav.practice": "Практика",
       "nav.media": "Медиа",
       "nav.insights": "Аналитика",
@@ -171,9 +170,8 @@
       "hero.m2": "Арбитраж по регламентам ICC и LCIA",
       "hero.m3": "Юридическая тайна и NDA с первого контакта",
 
-      "bio.eyebrow": "Биография",
-      "bio.h": "Марк Владимирович Романов",
-      "bio.lead": "Обладая обширным опытом в области международного права, глобального управления, аналитики и прогнозирования разноуровневых процессов, стратегического и тактического предиктата, искусства дипломатии в переговорах, Марк Романов имеет исключительную квалификацию и команду узкопрофильных профессионалов для решения любых поставленных клиентом задач.",
+      "bio.eyebrow": "Профиль",
+      "bio.outro": "Обладая обширным опытом в области международного права, глобального управления, аналитики и прогнозирования разноуровневых процессов, стратегического и тактического предиктата, искусства дипломатии в переговорах, Марк Романов имеет исключительную квалификацию и команду узкопрофильных профессионалов для решения любых поставленных клиентом задач.",
       "bio.k1": "Области права",
       "bio.b1": "Марк Владимирович Романов — международный юрист, работа которого сосредоточена на трансграничном коммерческом праве, международном арбитраже, банковском праве и корпоративном управлении.",
       "bio.k2": "Клиенты и поручения",
@@ -183,7 +181,7 @@
       "bio.k4": "Квалификация и должности",
       "bio.b4": "Имеет степень PhD в области права, официально признанную в Великобритании, и является действующим членом International Bar Association. Помимо юридической практики занимает руководящие должности в нескольких международных инвестиционных компаниях.",
 
-      "about.eyebrow": "Профиль",
+      "about.eyebrow": "Подход",
       "about.h": "Единая точка ответственности в трансграничных делах",
       "about.lead": "Практика Марка Романова сосредоточена на сложных трансграничных и мультиюрисдикционных кейсах, где коммерческие интересы, регуляторные риски и правовые системы разных стран пересекаются в рамках одной задачи.",
       "about.p1t": "Единая точка ответственности",
