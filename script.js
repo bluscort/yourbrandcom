@@ -18,7 +18,7 @@
 
       "brand.sub": "International Lawyer · Jurisconsult · Arbitrator",
       "nav.profile": "Profile",
-      "nav.approach": "Approach",
+      "nav.strategy": "Strategy",
       "nav.practice": "Practice Areas",
       "nav.media": "Media",
       "nav.insights": "Insights",
@@ -48,7 +48,7 @@
       "bio.k4": "Credentials and appointments",
       "bio.b4": "He holds a PhD in law, officially recognized in the United Kingdom, and is a current member of the International Bar Association. In addition to practicing law, he holds senior positions at several international investment firms.",
 
-      "about.eyebrow": "Approach",
+      "about.eyebrow": "Strategy",
       "about.h": "A single point of accountability for cross-border matters",
       "about.lead": "Mark Romanov's practice is focused on complex cross-border and multi-jurisdictional matters, where commercial interests, regulatory exposure and the legal systems of several countries meet within a single mandate.",
       "about.p1t": "A single point of accountability in cross-border matters",
@@ -77,7 +77,7 @@
       "pr4.t": "Real Estate",
       "pr4.b": "Asset management, insurance and asset protection, and sanctions recovery. We provide due diligence and support for real estate transactions. We handle cross-border settlements in complex transactions. We work with investment funds and private investors.",
       "pr5.t": "Analytical Center and Troubleshooting",
-      "pr5.b": "Information collection and analysis, OSINT, corporate and private intelligence, strategic consulting, and risk management. Tailored solutions for personal and corporate problems. Interaction with government agencies worldwide.",
+      "pr5.b": "Information collection and analysis, OSINT, corporate and private intelligence, private investigations, strategic consulting, and risk management. Tailored solutions for personal and corporate problems. Interaction with government agencies worldwide.",
       "pr6.t": "Alternative Citizenship and Residence",
       "pr6.b": "Citizenship and residence by investment. Selecting the jurisdiction that fits the client's objectives, preparing the dossier and evidencing the source of funds, and support through to the grant of status. Questions of tax residence and the status of family members are handled alongside.",
       "md.eyebrow": "Media & Press",
@@ -153,7 +153,7 @@
 
       "brand.sub": "Международный юрист · Юрисконсульт · Арбитр",
       "nav.profile": "Профиль",
-      "nav.approach": "Подход",
+      "nav.strategy": "Стратегия",
       "nav.practice": "Практика",
       "nav.media": "Медиа",
       "nav.insights": "Аналитика",
@@ -183,7 +183,7 @@
       "bio.k4": "Квалификация и должности",
       "bio.b4": "Имеет степень PhD в области права, официально признанную в Великобритании, и является действующим членом International Bar Association. Помимо юридической практики занимает руководящие должности в нескольких международных инвестиционных компаниях.",
 
-      "about.eyebrow": "Подход",
+      "about.eyebrow": "Стратегия",
       "about.h": "Единая точка ответственности в трансграничных делах",
       "about.lead": "Практика Марка Романова сосредоточена на сложных трансграничных и мультиюрисдикционных кейсах, где коммерческие интересы, регуляторные риски и правовые системы разных стран пересекаются в рамках одной задачи.",
       "about.p1t": "Единая точка ответственности в трансграничных делах",
@@ -212,7 +212,7 @@
       "pr4.t": "Недвижимость",
       "pr4.b": "Управление активами, страхование и защита активов, выход из санкционных ситуаций. Проверка и сопровождение сделок с недвижимостью. Проведение трансграничных расчётов при сложных сделках. Сотрудничество с инвестиционными фондами и частными инвесторами.",
       "pr5.t": "Аналитический центр и Траблшутинг",
-      "pr5.b": "Сбор и анализ информации, ОСИНТ, корпоративная и частная разведка, стратегический консалтинг и риск-менеджмент. Индивидуальные решения персональных и корпоративных проблем. Взаимодействие с административными структурами разных стран.",
+      "pr5.b": "Сбор и анализ информации, ОСИНТ, корпоративная и частная разведка, проведение частных расследований, стратегический консалтинг и риск-менеджмент. Индивидуальные решения персональных и корпоративных проблем. Взаимодействие с административными структурами разных стран.",
       "pr6.t": "Получение альтернативного гражданства",
       "pr6.b": "Программы гражданства и вида на жительство за инвестиции. Подбор юрисдикции под задачи клиента, подготовка досье и доказывание источника средств, сопровождение до получения статуса. Параллельно решаются вопросы налогового резидентства и статуса членов семьи.",
       "md.eyebrow": "Медиа и пресса",
