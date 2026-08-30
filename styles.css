@@ -179,16 +179,8 @@ html[lang="ru"] .hero-name{font-family:var(--serif);letter-spacing:.03em}
 .bio-grid{display:grid;grid-template-columns:.82fr 1.18fr;gap:clamp(30px,4.4vw,64px);align-items:start}
 
 .bio-fig{margin:0;position:sticky;top:112px}
-.bio-fig img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 22%;
-  border:1px solid var(--slate);border-radius:2px;filter:saturate(.92) contrast(1.02)}
-.photo-slot{position:relative;aspect-ratio:4/5;border:1px solid var(--slate);border-radius:2px;overflow:hidden;
-  display:grid;place-items:center;align-content:center;gap:14px;
-  background:radial-gradient(460px 300px at 50% 0%,rgba(212,175,55,.11),transparent 70%),var(--onyx)}
-.photo-slot::after{content:"";position:absolute;inset:14px;border:1px dashed rgba(212,175,55,.26);
-  border-radius:2px;pointer-events:none}
-.photo-slot .ic{width:34px;height:34px;color:var(--gold-deep)}
-.photo-slot span{font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--pearl-3)}
-
+/* снимок целиком, без кадрирования: пропорции задаёт сам файл */
+.bio-fig img{width:100%;height:auto;border-radius:2px;filter:saturate(.92) contrast(1.02)}
 .bio-blocks{display:grid;gap:1px;background:var(--slate);border:1px solid var(--slate);
   border-radius:2px;overflow:hidden}
 .bio-b{background:var(--obsidian);padding:clamp(24px,2.7vw,36px);display:flex;flex-direction:column;gap:12px;
@@ -270,7 +262,9 @@ html[lang="ru"] .hero-name{font-family:var(--serif);letter-spacing:.03em}
   font-size:14px;color:var(--pearl-2)}
 .ch-list li:last-child{border-bottom:1px solid var(--slate)}
 .ch-list .ic{color:var(--gold-deep)}
-.ch-list b{margin-left:auto;font-weight:400;color:var(--pearl)}
+.ch-list b,.ch-list .ch-v{margin-left:auto;font-weight:400;color:var(--pearl)}
+.ch-list a.ch-v{transition:color .4s var(--ease)}
+.ch-list a.ch-v:hover{color:var(--gold-light)}
 .ch-list.plain li:first-child{border-top:0}
 
 .form{border:1px solid var(--slate);border-radius:2px;background:var(--onyx);padding:clamp(26px,3.2vw,44px);

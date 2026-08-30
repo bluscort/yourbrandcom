@@ -91,8 +91,8 @@
   <symbol id="i-mail" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
   <symbol id="i-send" viewBox="0 0 24 24"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"/><path d="m21.854 2.147-10.94 10.939"/></symbol>
   <symbol id="i-plus" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M12 5v14"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></symbol>
   <symbol id="i-passport" viewBox="0 0 24 24"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20"/><circle cx="12" cy="8" r="2"/><path d="M15 14a3 3 0 1 0-6 0"/></symbol>
-  <symbol id="i-portrait" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3" rx="2"/><circle cx="12" cy="10" r="3"/><path d="M6.6 19.2a5.5 5.5 0 0 1 10.8 0"/></symbol>
 </svg>
 
 <header class="hdr" id="hdr">
@@ -185,12 +185,7 @@
 
     <div class="bio-grid">
       <figure class="bio-fig rv">
-        <!-- ФОТО: замените блок .photo-slot целиком на строку ниже (портрет 4:5, ~880×1100):
-             <img src="portrait.jpg" alt="Mark Romanov" width="880" height="1100" loading="lazy" decoding="async"> -->
-        <div class="photo-slot" aria-hidden="true">
-          <svg class="ic"><use href="#i-portrait"/></svg>
-          <span class="mono">Portrait · 4 : 5</span>
-        </div>
+        <img src="portrait.jpg" alt="Mark Romanov" width="880" height="1324" loading="lazy" decoding="async">
       </figure>
 
       <div class="bio-blocks">
@@ -367,20 +362,20 @@
 
     <ol class="ins">
       <li class="rv"><span class="ins-n">I</span>
-        <div><h3 data-i18n="in.1t">Red Notices and the limits of provisional arrest</h3>
-        <p data-i18n="in.1b">How review mechanisms, admissibility and political-motivation arguments interact in practice.</p></div>
+        <div><h3 data-i18n="in.1t">Red Notices and the prevention of arrest</h3>
+        <p data-i18n="in.1b">How notices are reviewed, on what grounds a request is refused, and what weight arguments of political motivation carry.</p></div>
         <span class="tag" data-i18n="in.tag1">Extradition</span></li>
       <li class="rv"><span class="ins-n">II</span>
         <div><h3 data-i18n="in.2t">Sanctions exposure in multi-tier ownership structures</h3>
-        <p data-i18n="in.2b">Where control tests, licensing routes and beneficiary protection meet in cross-border holdings.</p></div>
+        <p data-i18n="in.2b">How control is established along a chain of ownership, when a regulator&#39;s licence is required, and what protects the ultimate beneficial owner in cross-border holdings.</p></div>
         <span class="tag" data-i18n="in.tag2">Sanctions</span></li>
       <li class="rv"><span class="ins-n">III</span>
         <div><h3 data-i18n="in.3t">Enforcement of awards across uncooperative forums</h3>
-        <p data-i18n="in.3b">Strategy for recognition, asset tracing and parallel proceedings when a debtor is dispersed.</p></div>
+        <p data-i18n="in.3b">Strategy for recognition, asset tracing and parallel proceedings when a debtor&#39;s assets are spread across several jurisdictions.</p></div>
         <span class="tag" data-i18n="in.tag3">Arbitration</span></li>
       <li class="rv"><span class="ins-n">IV</span>
         <div><h3 data-i18n="in.4t">Legalization of digital assets under applicable law</h3>
-        <p data-i18n="in.4b">Transfer chains, source-of-funds evidence and the regulatory perimeter for private holdings.</p></div>
+        <p data-i18n="in.4b">Transfer chains, source-of-funds evidence and what regulators require of private asset holders.</p></div>
         <span class="tag" data-i18n="in.tag4">Digital assets</span></li>
     </ol>
   </div>
@@ -399,9 +394,12 @@
       </div>
 
       <ul class="ch-list">
-        <li><svg class="ic ic-sm"><use href="#i-send"/></svg><span data-i18n="ct.ch1">Signal</span><b class="mono">[+00 000 000 00 00]</b></li>
-        <li><svg class="ic ic-sm"><use href="#i-mail"/></svg><span data-i18n="ct.ch2">Proton Mail</span><b class="mono">[name@proton.me]</b></li>
-        <li><svg class="ic ic-sm"><use href="#i-globe"/></svg><span data-i18n="ct.ch3">Telegram</span><b class="mono">[@username]</b></li>
+        <li><svg class="ic ic-sm"><use href="#i-send"/></svg><span data-i18n="ct.ch1">Signal</span><a class="ch-v mono" href="https://signal.me/#p/+447377479481" target="_blank" rel="noopener noreferrer">+44 7377 479481</a></li>
+        <li><svg class="ic ic-sm"><use href="#i-mail"/></svg><span data-i18n="ct.ch2">Proton Mail</span><a class="ch-v mono" href="mailto:Romanov-Consult@proton.me">Romanov-Consult@proton.me</a></li>
+        <!-- Telegram скрыт до появления реального ника. Вернуть — раскомментировать и вписать значение:
+        <li><svg class="ic ic-sm"><use href="#i-globe"/></svg><span data-i18n="ct.ch3">Telegram</span><a class="ch-v mono" href="https://t.me/USERNAME" target="_blank" rel="noopener noreferrer">@USERNAME</a></li>
+        -->
+        <li><svg class="ic ic-sm"><use href="#i-chat"/></svg><span data-i18n="ct.ch4">Matrix</span><a class="ch-v mono" href="https://matrix.to/#/@romanov999:matrix.org" target="_blank" rel="noopener noreferrer">@romanov999:matrix.org</a></li>
       </ul>
     </div>
 
@@ -452,9 +450,12 @@
 
       <div class="ftr-col">
         <h4 data-i18n="ftr.ch">Encrypted channels</h4>
-        <a href="#contact"><span data-i18n="ct.ch1">Signal</span> <b class="mono">[+00 000 000 00 00]</b></a>
-        <a href="#contact"><span data-i18n="ct.ch2">Proton Mail</span> <b class="mono">[name@proton.me]</b></a>
-        <a href="#contact"><span data-i18n="ct.ch3">Telegram</span> <b class="mono">[@username]</b></a>
+        <a href="https://signal.me/#p/+447377479481" target="_blank" rel="noopener noreferrer"><span data-i18n="ct.ch1">Signal</span> <b class="mono">+44 7377 479481</b></a>
+        <a href="mailto:Romanov-Consult@proton.me"><span data-i18n="ct.ch2">Proton Mail</span> <b class="mono">Romanov-Consult@proton.me</b></a>
+        <!-- Telegram скрыт, см. секцию контактов:
+        <a href="https://t.me/USERNAME" target="_blank" rel="noopener noreferrer"><span data-i18n="ct.ch3">Telegram</span> <b class="mono">@USERNAME</b></a>
+        -->
+        <a href="https://matrix.to/#/@romanov999:matrix.org" target="_blank" rel="noopener noreferrer"><span data-i18n="ct.ch4">Matrix</span> <b class="mono">@romanov999:matrix.org</b></a>
         <button class="linkish" type="button" data-open="press" data-i18n="md.pk">Press Kit &amp; Media Inquiries</button>
       </div>
     </div>
