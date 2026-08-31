@@ -124,6 +124,8 @@
       "ct.ch2": "Proton Mail",
       "ct.ch3": "Telegram",
       "ct.ch4": "Matrix",
+      "ct.ch5": "WhatsApp",
+      "ct.chnote": "Messengers are for first contact and scheduling. The substance of a matter is discussed on an encrypted channel.",
       "ct.name": "Name",
       "ct.namep": "How to address you",
       "ct.reach": "How to reach you",
@@ -135,6 +137,7 @@
 
       "ftr.nav": "Navigation",
       "ftr.ch": "Encrypted channels",
+      "ftr.msg": "Messengers",
       "ftr.disc": "This website provides general information about the practice of Mark Romanov and does not constitute legal advice, an offer of representation, or a solicitation in any jurisdiction where such an offer would be unlawful. Transmitting information through this site does not create a counsel–client relationship until an engagement is confirmed in writing. Services are rendered in accordance with the regulatory and professional requirements applicable in each relevant jurisdiction.",
       "ftr.priv": "Legal privilege · NDA standard · Encrypted correspondence",
 
@@ -260,6 +263,8 @@
       "ct.ch2": "Proton Mail",
       "ct.ch3": "Telegram",
       "ct.ch4": "Matrix",
+      "ct.ch5": "WhatsApp",
+      "ct.chnote": "Мессенджеры — для первого контакта и согласования времени. Существо дела обсуждается по защищённому каналу.",
       "ct.name": "Имя",
       "ct.namep": "Как к вам обращаться",
       "ct.reach": "Способ связи",
@@ -271,6 +276,7 @@
 
       "ftr.nav": "Навигация",
       "ftr.ch": "Защищённые каналы",
+      "ftr.msg": "Мессенджеры",
       "ftr.disc": "Сайт носит общий информационный характер, не является юридической консультацией, офертой о представительстве или предложением услуг в юрисдикциях, где такое предложение противоречит закону. Передача информации через сайт не создаёт отношений «юрист — клиент» до письменного подтверждения поручения. Услуги оказываются с соблюдением регуляторных и профессиональных требований применимых юрисдикций.",
       "ftr.priv": "Адвокатская тайна · Стандарт NDA · Шифрованная переписка",
 
